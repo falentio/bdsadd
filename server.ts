@@ -17,9 +17,9 @@ await listenAndServe({ port }, (req) => {
 	}
 
 	const address = searchParams.get("address") || "127.0.0.1";
-	const title = searchParams.get("title") || address;
+	const name = searchParams.get("name") || address;
 	const port = searchParams.get("port") || "19132";
-	const server = sprintf("%s|%s:%s", title, address, port);
+	const server = sprintf("%s|%s:%s", name, address, port);
 
 	const mc = new URL("minecraft://");
 	mc.searchParams.set("addExternalServer", server);
