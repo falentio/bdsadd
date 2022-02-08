@@ -16,8 +16,8 @@ await listenAndServe({ port }, (req) => {
 		return new Response("not found", { status: 404 });
 	}
 
-	const title = searchParams.get("title") || "minecraft dedicated server";
 	const address = searchParams.get("address") || "127.0.0.1";
+	const title = searchParams.get("title") || address;
 	const port = searchParams.get("port") || "19132";
 	const server = sprintf("%s|%s:%s", title, address, port);
 
